@@ -154,15 +154,13 @@
     </video>
   </header>
 
-
-
   <section class="products">
     <div class="product" data-name="Pembuatan Website Statis" data-price="50000">
       <img src="https://static1.howtogeekimages.com/wordpress/wp-content/uploads/2022/10/shutterstock_577183882.jpg?q=50&fit=crop&w=1140&h=&dpr=1.5" alt="Pembuatan Website">
       <h2>Pembuatan Website Statis</h2>
       <p>Jasa pembuatan website statis profesional dan responsif.</p>
       <p>Biaya: Rp 50.000</p>
-      <button onclick="addToCart(this)">Layanan yang dipilih</button>
+      <button onclick="addToCart(this)">Pilih Layanan</button>
     </div>
 
     <div class="product" data-name="Pembuatan Poster" data-price="30000">
@@ -170,7 +168,7 @@
       <h2>Pembuatan Poster</h2>
       <p>Desain poster menarik untuk promosi atau keperluan personal.</p>
       <p>Biaya: Rp 30.000</p>
-      <button onclick="addToCart(this)">Layanan yang dipilih</button>
+      <button onclick="addToCart(this)">Pilih Layanan</button>
     </div>
 
     <div class="product" data-name="Editing Konten Sosial Media" data-price="40000">
@@ -178,21 +176,19 @@
       <h2>Editing Konten Sosial Media</h2>
       <p>Jasa editing video dan grafis untuk konten sosial media Anda.</p>
       <p>Biaya: Rp 40.000</p>
-      <button onclick="addToCart(this)">Layanan yang dipilih</button>
+      <button onclick="addToCart(this)">Pilih Layanan</button>
     </div>
   </section>
 
   <section id="cart">
-    <h2>Pesanan anda</h2>
+    <h2>Pesanan Anda</h2>
     <ul id="cart-items"></ul>
     <p>Total: <span id="total">Rp 0</span></p>
-    <button id="checkout" onclick="checkout()">Checkout</button>
+    <button id="checkout" onclick="checkout()">Checkout via WhatsApp</button>
   </section>
 
   <script>
     const cartItems = [];
-    const addSound = document.getElementById('add-sound');
-    const checkoutSound = document.getElementById('checkout-sound');
 
     function addToCart(button) {
       const product = button.closest('.product');
@@ -200,8 +196,6 @@
       const price = parseInt(product.dataset.price);
       cartItems.push({ name, price });
       updateCart();
-      addSound.currentTime = 0;
-      addSound.play();
     }
 
     function updateCart() {
@@ -221,21 +215,23 @@
 
     function checkout() {
       if (cartItems.length === 0) {
-        alert("Keranjang masih kosong.");
+        alert("Pesanan masih kosong.");
         return;
       }
 
-      checkoutSound.currentTime = 0;
-      checkoutSound.play();
+      let message = "Halo admin flintzon sigma, saya ingin memesan jasa berikut:%0A";
+      let total = 0;
+      cartItems.forEach(item => {
+        message += `- ${item.name} (Rp ${item.price.toLocaleString()})%0A`;
+        total += item.price;
+      });
+      message += `%0ATotal: Rp ${total.toLocaleString()}`;
 
-      setTimeout(() => {
-        alert("Terima kasih telah menggunakan jasa kami!");
-        cartItems.length = 0;
-        updateCart();
-      }, 500);
+      // Ganti nomor di bawah dengan nomor WhatsApp tujuan (format internasional, tanpa +)
+      const phoneNumber = "6281234567890";
+      const url = `https://wa.me/${6281266990566}?text=${message}`;
+      window.open(url, '_blank');
     }
   </script>
 </body>
 </html>
-
-
