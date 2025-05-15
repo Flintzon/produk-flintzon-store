@@ -11,6 +11,7 @@
       box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+
     body {
       background: #000;
       color: #e0f7fa;
@@ -18,6 +19,7 @@
       overflow-x: hidden;
       position: relative;
     }
+
     body::before {
       content: '';
       position: fixed;
@@ -41,17 +43,20 @@
       text-align: center;
       margin-bottom: 30px;
     }
+
     header video {
       width: 100%;
       max-height: 250px;
       object-fit: cover;
       border-radius: 12px;
     }
+
     .products {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
+
     .product {
       background: #111b2b;
       border-radius: 10px;
@@ -59,23 +64,28 @@
       box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
       transition: transform 0.3s;
     }
+
     .product:hover {
       transform: scale(1.03);
     }
+
     .product img {
       width: 100%;
       height: auto;
       border-radius: 8px;
       margin-bottom: 10px;
     }
+
     .product h2 {
       color: cyan;
       font-size: 1.4em;
     }
+
     .product p {
       margin: 8px 0;
       font-size: 0.95em;
     }
+
     .product button {
       background: cyan;
       border: none;
@@ -85,26 +95,32 @@
       cursor: pointer;
       transition: background 0.3s;
     }
+
     .product button:hover {
       background: #00e5ff;
     }
+
     #cart {
       margin-top: 40px;
       background: #0d1a26;
       padding: 20px;
       border-radius: 10px;
     }
+
     #cart h2 {
       color: cyan;
       margin-bottom: 10px;
     }
+
     #cart ul {
       list-style: none;
       margin-bottom: 10px;
     }
+
     #cart ul li {
       margin-bottom: 5px;
     }
+
     #checkout {
       background: cyan;
       color: #000;
@@ -113,13 +129,18 @@
       border-radius: 5px;
       cursor: pointer;
     }
+
     @media screen and (max-width: 600px) {
       .product h2 {
         font-size: 1.2em;
       }
-      .product p, #cart p, #cart ul li {
+
+      .product p,
+      #cart p,
+      #cart ul li {
         font-size: 0.9em;
       }
+
       header video {
         max-height: 180px;
       }
@@ -133,96 +154,88 @@
     </video>
   </header>
 
+
+
   <section class="products">
-    <div class="product" data-name="Botol Minum" data-price="50000" data-stock="10">
-      <img src="https://images.tokopedia.net/img/cache/700/VqbcmM/2022/6/3/0c435e53-12c9-44ca-b9cc-a5b01048b90a.jpg" alt="Botol Minum">
-      <h2>Botol Minum</h2>
-      <p>Botol minum tahan panas dan dingin, kapasitas 1 liter.</p>
-      <p>Harga: Rp 50.000</p>
-      <p>Stok: <span class="stock">4</span></p>
-      <button onclick="addToCart(this)">Tambah ke Keranjang</button>
+    <div class="product" data-name="Pembuatan Website Statis" data-price="50000">
+      <img src="https://static1.howtogeekimages.com/wordpress/wp-content/uploads/2022/10/shutterstock_577183882.jpg?q=50&fit=crop&w=1140&h=&dpr=1.5" alt="Pembuatan Website">
+      <h2>Pembuatan Website Statis</h2>
+      <p>Jasa pembuatan website statis profesional dan responsif.</p>
+      <p>Biaya: Rp 50.000</p>
+      <button onclick="addToCart(this)">Layanan yang dipilih</button>
     </div>
-    <div class="product" data-name="Topi" data-price="75000" data-stock="7">
-      <img src="https://images.tokopedia.net/img/cache/700/VqbcmM/2021/10/5/37ed88ed-da7a-4229-bfd7-0b8fc816a573.jpg" alt="Topi">
-      <h2>Topi</h2>
-      <p>Topi kasual dengan desain minimalis dan bahan adem.</p>
-      <p>Harga: Rp 75.000</p>
-      <p>Stok: <span class="stock">1</span></p>
-      <button onclick="addToCart(this)">Tambah ke Keranjang</button>
+
+    <div class="product" data-name="Pembuatan Poster" data-price="30000">
+      <img src="https://akcdn.detik.net.id/community/media/visual/2021/12/03/ilustrasi-desainer.jpeg?w=700&q=90" alt="Pembuatan Poster">
+      <h2>Pembuatan Poster</h2>
+      <p>Desain poster menarik untuk promosi atau keperluan personal.</p>
+      <p>Biaya: Rp 30.000</p>
+      <button onclick="addToCart(this)">Layanan yang dipilih</button>
     </div>
-    <div class="product" data-name="Kacamata" data-price="120000" data-stock="5">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxEQEhUSEhMWFRUQFhcXGBYWFhUQFxgTGBIWFxUXFhYZICggGBolGxUVITEhJSkrLi4uFyAzODMtNygtLisBCgoKDg0OFQ8QGi0dHR0rLS0tLS0tLS0tKy0tLSstLS0rLS0tLS0tKy0rLS0tLS0tLS03LS0rNy0tNy03LSstK//AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAgIDAQAAAAAAAAAAAAAABgcEBQECCAP/xABDEAABAwIDBAcECAQEBwEAAAABAAIDBBEFEiEGBxMxIkFRYXGRoTIzQoEUI0NicpKisVKCssEIRFNjJIOTs8LD0RX/xAAYAQEBAQEBAAAAAAAAAAAAAAAAAQMCBP/EAB4RAQEBAQEAAwADAAAAAAAAAAABEQISIUFRAxMx/9oADAMBAAIRAxEAPwC8UREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERBhIiIM1ERAREQEREBERARFw51uaDlFqMQ2noaf31VCy3U6RgPle6jWIb3sHh0+kGQ9kcb3+pAHqgniKn67f5SNvwaWZ/ZncyIemZR6t3+1ZvwqSFnYXufL+2VB6BReYarfTjD/AGZIo+5kLD/XmXo6ixinkyNE0RfK0ODRIwuPRzGzb3OiDYIiICIiAiIgIiICIiAiIgwkREGaiIgIqm3pbzqjDqk0kLGtORjxI5nFvmvfo5m2tbvVV4pvExWpcb17mg/Cz/hx+lo9Sg9UT1DIxd72tHa4ho8yo3iW8XCae+esiJHUx3GPky68x0eHVeISZXTsc4/FPVRtHyMj7k9wuVP8F3F1EwzS1kDR/sh1SbePRA9UExxPfrh0ekMU8x7crYm+bjf0UVxHf5Um4gpImdhke6U+QyhS3C9xmGx6yvnmPYXiJvkwA+ql2F7BYXTW4VFCCOTnN4rvzPuUFDybydoK02gc/wAKaC/qA4+q7DYzaWvP1raizuuebhgeLC6/ovS8cTWizQAB1AADyC7oPPWHbha13v6mCP8AAHzn53DR6qT4fuEo2241VPIRzyBkIPyIcfVW8iCvYdzODNFjDI/vdNID+kgL51u5TCJBZrJYj2slc7/uZgrGRBQ2PbhZWguo6lr/ALkzeGflI24J/lCheF4dV4BXwVNZTSNZC+5LQHNc0tLTkeDlJseVx8l6tXyqKdkjS17Q5rhYtcA4EdhB0KCO7M7e4diFhBO3iH7KT6qT5Nd7X8t1J1VO2O5WlqLy0Lvo0vMM1dC49WnOPxbcdyhFLttjeAS8CtYZox7LZiXBzR1w1AuSOXO9uwIPRqKE7Ibz8OxGzBJwZj9lNZhJ+472X/I37lNboOUREBFwSoVtZvPw7D7s4nHmH2UNnkH77/ZZ8zfuQTUlaTC9p4KqofDAeIIQc8gIyZw4DI0/GRfUjQctdbURj+32IYs7he5hfoIISS547JHjpP8AAWHcp1usppIZRG5joiG6sc0xnKWm3RcL2uB5K4mrZREUVhIiIM1ERBQn+ITDGCspptbzQvYR1fVPBaR3/WnyCjZ2TgOHCtaXCQMzEdEtJEmU6WuOXavR2MYFS1gAqYI5g2+XiMa/Le18pOovYcuxebMDxGUT/wD5z33p3TSQuis24aZHAgOtmbr3rTj8Z97/AK+GD7Ky1cDp45GDIXAscHA9FoOhF+1aGCUsOZhLD2tJYfMKxcRxBmDFtPFHxI6jM853kOa7RhAOXlYA6+ai20uyr6BrHGVsjXuyizSwg5SdRc9Q7V3Yz11otsMRh93WVA8ZHSDyfcLe0W9jFo9DMyW3+pEw+rMqgt1zdTIu1a1Jvvq224lLC/8AC+SH98y21Hv6pCbTUszLdbHRzD1LSqbw6Jr5oWPvkkmja6xynI6QB1j1aHmrprtxNC4nh1FQwnXpcOUD9IPqs7jXm2t9h+93CJvt3Rn/AHIpB5loI9VIKHbDDp9I6yncezisB/KTdedKvYWVldUUMUrHOpA053B0WZr2McLAZrHpjr6lpK6glgmNPIAXgtHROYEuALQD13zBWc7EvWV6/jla4XaQR2g3/ZdrryHJDU0h1bNBrztJBc9zha/Lq7FsaPbnEodGVs+n8T+L6SXTwnt6sRecaLfDikdszopbf6kQBPzjLVIKPfpKPe0bHd7JXM9HNd+6nmuvcXcsHGMIgrInQ1EbZY3c2uF9eog82nvGqryj330Dvew1EfflZIPR1/Rbum3r4M//ADWTufFKz922UyrsVbt9uanps01Bmni1JiOszB93/UHh0u4803YbSY9HMynZDLUwggOZMHNEbb6kTO9i3YbjTkrDx3fDhcMbzDMZpQ0ljBHK1rnW6ILy0AC/Wq5xPfpXvaWwxQxE/HZ0hAt1NcbX7zfwUV6DrK2KFhkle2NjebnuDGjxJ0Va7Ub7aGnuyla6qkGlx9VED+Mi7vkLd6ouprcRxaYBzpqqU8mjNJb8LBoweAAVh7K7jqmWz66QQN5mNlpJT4u9hn6kEW2h3hYpibuG6VzWPNhBACwOv1G3Sk58iT4LfbH7na2ps+o/4WI62cM0xHdH8H8xuP4Srv2Y2NocObamga1x5yHpyO8XnX5CwW/V0aDZfY+jw5tqeMZiOlI7pyO8XdQ7hYdy0tViAlx6GGPX6NSyumI7HluRp7wSD8yppUzBjHPPJjS4+AF/7KvNzVE+SOoxOa/FxKUuF+bYWOcGDzzfIBBZCIigwkREGaiLguQcqtd+OGSPpIZaeJzpYaljs0TC6QN4cgJu0XsDl9FYb6lo5r5OxKIc3W81flHnrZqmGJtkFbnfJTuDWkkxPa1wJIIAF9W36QK+Tq9+LuNG/LEacukD2gvzZDw8pYTp7y979XJdN5ArIsUqpqXjCOVzHB8eYtd9Uy9wNNHZhqFD8JxyWkmMzbF5Dg4PB1zEONwLWNwtZ0z8fj6YvSGmmfC5wcYyBcCwN2hwPkViB6+mL4qamZ8zmhpky3AuRowN0v4Lph0Dp5Y4WWzTyMjbmNhme4NFz1C5UtPLLw2lnkewwxSSESsAyMc/phwdluBa/cvYQHWoJui2RqcLp5o6kszTS5w1ji8ABgbqbDnZT1Z260kxQe3eMigx2plcwvEsMIs0gH2Ga68/YWgrcKmxKZtfTtAjLmXa9wbIDEQ12mrfh01V1bZbvaHEXOnma8TZMoeyRzNGglt26tPPsVIbH7ZQ0tOIZWSGznHM0NcLO11BIPau+L9OOp863G29fDXUwbSv4z2yNeWRhznhmV7S4stmsMzdbdart8ZabOaWnscC0+RU02aweXDqjjVBYyHhuZxM4Lbuc3LfrF7di128CUS1DZYzxGcJozt6bcwe+4LhpexGneF24Rq65XQOXN1Ed1zHSPneyKJuaSVwYxoIF3ONgLnRfO6tfd5uukm+g4ialvDDmT8MRkPDmPuGZs1iLt1Poueq74nyjFBuexaX2oGx98ksYHkwuPop1sxuJhZZ1dMZSOcUV42cuReekevlZXKizasDB8FpqNnDpoWRN7GNDb97jzce8rPREBERB0ljDgWnk4WPgeax8Mw+OmibDE3LHGMrWjkG9iy0QEREGEiIgzVwQuUQfF8AKxZsOaepbBFdTEbqdnGO1t6LS4hsTFJo5jXDsc0OHqFPbLjIFfSeVPV26qmf9kG/gLmegNlj4LuoggqYpzJKRDI2QM6NiWkOHS0I1AVzmILoacJsMrmKoDl9rr4cG3JdHNcpi6yXBUbvm2CoKGjFTSxGJ5mYwgPeWZXtfezHEgagclbtQ2XqcQoxtXg0tbCYJjnjJByntHI3GoVnKWqYx/a2CppHRAPa88PRwFjle0k3B7AVl7vMTjZDIx0jWuMpIa5waSDGwaA8+XottXbqo/hzs8HZh5OB/dR6t3bTtvkkv3OYR6gn9lptcZMxGcUIE8w6uLJbw4jrLGzra1Ox9dH9nmH3XD+9l22bwapNbTNdTv8AfxXDmHKWiRpdcnS1rrnV8pLul2SpcVlqI6gyARxscwxvyEEuId1EHq5heicFwuKjgjp4QRHC0NaCS427yeZuSfmuMLwimps30eCOESG7hGxseY9pygXWes60kEREBERAREQEREBERBhIiIM1ERAREQEREBERASyIg4LV0dCF9ETRjPpGnqWPJhjD1LYorqY0kmBRn4R5L5NwJrTduikC4sr6Tyw6dr26XuskPK72XKmq4RcoooiIgIiICIiAiIgwkREGaiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiIMJERBmoiICLAxbGqekbnqJWRt7XG3XblzURxHe9hEJLeM97m9TIpD1XABcAPVBPUVP1+/ukbfg0sz+95ZEPQuKjdfv7rHe5poY+9znyn0yoPQiLze3braattwGS2d1w02n5y02819RsltVWe9kmYD/qVIjH5WOv6IPQdRXRR6ySMZ+JzW/uVoq3b7Cobh9bBcdTXiQ+Tbqo6TcTXSnNUVcTSeziVB/Vl/db6i3A0otxquZ/bw2Mi/qzIN/V758HZfLLJJb+CJ/wC77LSVW/yjHu6Wd34jHGPQlbuk3L4Oz2o5ZPxzPH9GVbRm6/BgLfQo/m6QnzLkFb1X+ICX7OiYO98pd6Bo/dbTd5vZq8SxCOmlihZHI2QnKH5rtjLhYl1ursW+xXcthMwPDZJA49ccjiPyyZhbyVc7S7kq6mvJSSNqWj4R9TKB3AnK7TsN+5B6La4FcqiNzG2NNhrJqGvc+nldOXjisc0DNGwFrydWG7b9IAa81eVPUMkaHsc1zXahzSHAjtBGhQfVERAREQEREBERARF1MguBcXPIX1Nudgg7IiIMJERBmoiIKI/xAUkwraaWMlnEgczO1xbrHIXEG2v2o81A24dXSR/SHtE0QuDI+Js/s88zyMwt23XoTeFsSMVbF9cYnU+fKcokBzhtw4XB+Aciqi2Wx6M0T8Pc1wlqOI1hsCzPK0NaHG9x0uu3WtOJK47tjQYHWUsDi6Wgp57n4nTtA+Re5v6VY2A7y8NgsBhog74GwuA7+TCqzxfCpqR/DmblcRmGocC25FwQe0FYN114jP3Xo2g3m4VL/mOGeyVj4wP5rZfVSOgxqmn9zPFJf+CRj/QFeT7obHmBopf41/sr18uV5appMcjZHNSfThE9uZpjE0kZb1Gwu22h5hZ+F72sYh95IyUN58WJuh6wTHlIPis8a69LIqWw7fe/QT0jT3xyFnk1wI/UpPh+9/DpPeCaE/eZnHnGXH0V81PcWEi0NBtnh09hHVwkn4S8Ru/K+xW7ZIHC7SCO0G4XK60u1GyNFiTMtTC1xAs2QdGRn4XjUeHLtCqHFNk8Y2ec6fDpnzUwN3MtnIHXxYeRFvjbr4K+roiqu2N30UdVaOsApZTpmJzQuP4+bP5tO9WfFIHAOaQQRcEG4I7QRzVZbwt0VPXZp6TLBUakttaKU8+kB7Dj/EPmDzVabG1mPYXV/Q4IZHOv0qZ4zREcy5rr5WA/xg28UHptF8IpyI2vlAjOUFwzAhrrajNpcA6XUZxneRhNLcSVcbnD4Yrzuv2dC4HzIQS1FTGMb/IRcUtK9/3pnCIeOVuYnzCgmMb3sXqTlZKIA7QNgZYm506Tszr+BCD01W10UDS+WRkbRzc9wYPMqDY9viwqmuGSOqHjqhbcf9R1m+RKpOg2FxrE3CR0Uzr/AGtS5zNO28hzEeAKnuAbhOTq2p8Y4B/7Hj/xQaTaHflXT3bSxspmm/SP18ncQSA0flPitZu42knZiTKypfLOXB0fSdmd9YQBq42DQdbD5BXdhu7DCIG2FHG/tMuaYn85IHyAUa223fUtI0VtG0RcJ7DJGCSwsLwMzQfZIuDYaEX0urMFqousZuAe0LsoMJERBmoiIOCFQ+87Z2mwipo56VjgHve9zHPc8F0T4nNDS65bfM5XuZAOta/FsNpKtuSojilaL2EjWvsTzIvyPeFZcSzVDYvHJjI+lQtbH9HaY3se65NryXaQ2x0dbWyg4ctlgu1kmH8aARte1z3Ahxc1wIBZofADmFHGzHldb6xvNbLMgeFgNlUv3cbOfTq2Fk0Er6Z7ZS94EkbBZjg13Ebb4wBz5qXrITnV3bopM2DUh7GPH5ZXj+ygW9vKzGaRzgLPjgzXtawqng5r9VndauLBMJho4WU9OzJFGLNbcutckm5OpJJJv3qvN7ewtZiE0dRTcMiKEscx7yxx6ZcMvRIOhPMhY8/Fa9TYr7epRwxvp3QsjZxBLmMYa0OIMdicuh9o+ahccjrKa7rqmEcdshjAkERa2QsFz9Zewdz5jzUWxZobUTNAAAmlAAsBl4jsth2Wst2FYpc7tWXRYhPBrFI+M/7b3Rf0kLFuu11RK6DeNisNrVTngfDI1koPzLc3qpHR766xg+upoZbdbHPgPrnVZL5zu6Lu0NJt8lzZFnVWjV7/AJ9vq6FoP3pi70DB+6hVZvXxd5dlqTGHdTWx6dwJboPCysrBNylG+OOV9TOeIxj7NELfaaHWzFhPWpfg27LCaXVtKyR1755rzm/bZ3RHyAWL0PNzWYriruVVVknn9ZM0HxPRb6KWYLuSxOexm4VO0887uI/8rLjzcF6TjjDRYAADkALAfJdlBVGB7i6CKxqZJah3WAeAw/JvS/Up/guy9DRC1NTRREfE1ozfN56R+ZW4RAREQFFN58tsPkaOc0kEQ/5lRG3+5UrWBjmExVkJhlF2OLXaEg5mPD2kEaggtCDLp5A5ocOTgCL6aWX0XSFmUAdi7oMJERBmoiIOj4wVg1OGNctiiuiGYrsRTzCz42O/E0O/dQ3FN0NK65Y1zCf4HEDyNx6K5bLqWBX05x51rdz1QCeFM09gkaR+pv8A8Vx7tsHdQYfDSyPD3xZy4gEC75HPIF+YGa19L9gUkdAOxdeAByS3VkfddXi4t2r5kELHmqJByF1MNecNvN302ENjc+ZkscryxpDXMcCGl3Sabi1geRWfiOIQS4S1gfG6SOKAFuZpe0tdGHC3McirC3nYRNikEcXuzFJxA4DPfoObYt0/i7VT9fsBXReyGPA7CWHycLeq0lv2z65laIPXOdcVeF1MPvIZG268pI/MLhYjJl16c+a2MDHPc1jAXOkc1jWi1y9xDWjXTUkK6N0Oxb2MqTiFG0ZpIjEJmMe4FjTmLQb5Re2vWozut3efTmQV5qMgiqCXRCO5JheHNs/Npc2vdq9AALPrrWnHOAFlyiLh2IiICIiAiIgIiICIiDCREQZqIiAiIgIiICIiAuC0LlEHxfTtPMLFmwtjuoLYIrqYj0+zUTvhC0eIbvKSb3kLHd5GvmNVPUV9GNFs3hjKGFtPDGGRsvYC/Mm5JJ1J7yt2111zZLKK5REUBERAREQEREBERAREQYSIiDNREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREGEi5XCDlERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQYaIiD/9k=" alt="Kacamata">
-      <h2>Kacamata</h2>
-      <p>Kacamata stylish anti UV, cocok untuk berkegiatan di luar ruangan.</p>
-      <p>Harga: Rp 120.000</p>
-      <p>Stok: <span class="stock">2</span></p>
-      <button onclick="addToCart(this)">Tambah ke Keranjang</button>
+
+    <div class="product" data-name="Editing Konten Sosial Media" data-price="40000">
+      <img src="https://uici.ac.id/wp-content/uploads/2023/04/png_20230404_131157_0000.png.webp" alt="Editing Konten Sosial Media">
+      <h2>Editing Konten Sosial Media</h2>
+      <p>Jasa editing video dan grafis untuk konten sosial media Anda.</p>
+      <p>Biaya: Rp 40.000</p>
+      <button onclick="addToCart(this)">Layanan yang dipilih</button>
     </div>
   </section>
 
   <section id="cart">
-    <h2>Keranjang</h2>
+    <h2>Pesanan anda</h2>
     <ul id="cart-items"></ul>
-    <p>Total: Rp <span id="total">0</span></p>
-    <button id="checkout" onclick="checkoutWhatsApp()">Checkout via WhatsApp</button>
+    <p>Total: <span id="total">Rp 0</span></p>
+    <button id="checkout" onclick="checkout()">Checkout</button>
   </section>
 
   <script>
-    const cart = [];
+    const cartItems = [];
+    const addSound = document.getElementById('add-sound');
+    const checkoutSound = document.getElementById('checkout-sound');
 
     function addToCart(button) {
-      const product = button.parentElement;
+      const product = button.closest('.product');
       const name = product.dataset.name;
       const price = parseInt(product.dataset.price);
-      let stock = parseInt(product.dataset.stock);
-      const stockDisplay = product.querySelector('.stock');
-
-      if (stock <= 0) {
-        alert('Stok habis!');
-        return;
-      }
-
-      const item = cart.find(i => i.name === name);
-      if (item) {
-        item.qty++;
-      } else {
-        cart.push({ name, price, qty: 1 });
-      }
-
-      product.dataset.stock = stock - 1;
-      stockDisplay.textContent = stock - 1;
-
+      cartItems.push({ name, price });
       updateCart();
+      addSound.currentTime = 0;
+      addSound.play();
     }
 
     function updateCart() {
-      const cartItems = document.getElementById('cart-items');
-      const total = document.getElementById('total');
-      cartItems.innerHTML = '';
-      let sum = 0;
-      cart.forEach(item => {
+      const list = document.getElementById('cart-items');
+      list.innerHTML = '';
+      let total = 0;
+
+      cartItems.forEach(item => {
         const li = document.createElement('li');
-        li.textContent = `${item.qty}x ${item.name} - Rp ${item.qty * item.price}`;
-        cartItems.appendChild(li);
-        sum += item.qty * item.price;
+        li.textContent = `${item.name} - Rp ${item.price.toLocaleString()}`;
+        list.appendChild(li);
+        total += item.price;
       });
-      total.textContent = sum;
+
+      document.getElementById('total').textContent = `Rp ${total.toLocaleString()}`;
     }
 
-    function checkoutWhatsApp() {
-      if (cart.length === 0) {
-        alert('Keranjang kosong!');
+    function checkout() {
+      if (cartItems.length === 0) {
+        alert("Keranjang masih kosong.");
         return;
       }
-      let message = 'halo mas flintzon sigma \n Saya ingin membeli:\n';
-      cart.forEach(item => {
-        message += `- ${item.qty}x ${item.name} (Rp ${item.qty * item.price})\n`;
-      });
-      const total = document.getElementById('total').textContent;
-      message += `Total: Rp ${total}`;
-      const url = `https://wa.me/6281266990566?text=${encodeURIComponent(message)}`;
-      window.open(url, '_blank');
+
+      checkoutSound.currentTime = 0;
+      checkoutSound.play();
+
+      setTimeout(() => {
+        alert("Terima kasih telah menggunakan jasa kami!");
+        cartItems.length = 0;
+        updateCart();
+      }, 500);
     }
   </script>
 </body>
 </html>
+
+
